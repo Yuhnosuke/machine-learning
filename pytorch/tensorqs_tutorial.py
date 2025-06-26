@@ -1,5 +1,6 @@
 import torch
 import numpy as np
+import torch.nn as nn
 
 data = [[1, 2], [3, 4]]
 x_data = torch.tensor(data)
@@ -83,3 +84,24 @@ print(t1.add(5))
 print(t1)
 print(t1.add_(5))
 print(t1)
+
+
+s1 = torch.tensor([[1, 2, 3], [4, 5, 6]])
+print(s1.shape)
+print(torch.sum(s1, dim=0))
+print(torch.sum(s1, dim=1))
+
+s2 = torch.ones(5, 1)
+s2.shape
+
+squeezed = torch.squeeze(s2)
+squeezed.shape
+squeezed
+
+unsqueeze1 = torch.unsqueeze(squeezed, 0)
+unsqueeze1.shape
+unsqueeze1
+
+unsqueeze2 = torch.unsqueeze(squeezed, dim=1)
+unsqueeze2.shape
+unsqueeze2
